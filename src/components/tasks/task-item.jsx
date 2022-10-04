@@ -1,11 +1,14 @@
 import React from "react";
 
+/**
+ * This component renders a single task item to be displayed within the TaskList component.
+ */
 export default function TaskItem(props) {
     return (
         <li className="task stack-small">
             <div className="c-cb">
-                <input id="task-0" type="checkbox" defaultChecked={props.completed} />
-                <label className="task-label" htmlFor="task-0">
+                <input id={props.id} type="checkbox" defaultChecked={props.completed} />
+                <label className="task-label" htmlFor={props.id}>
                     {props.name}
                 </label>
             </div>

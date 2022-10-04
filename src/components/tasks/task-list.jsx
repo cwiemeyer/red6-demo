@@ -1,13 +1,23 @@
 import React from "react";
 import TaskItem from "./task-item";
 
-export default function TaskList() {
+/**
+ * This component renders a container as a list for compilation of TaskItem components to be displayed.
+ */
+export default function TaskList(props) {
+    const taskList = props.tasks.map((task) => (
+        <TaskItem
+            id={task.id}
+            name={task.name}
+            completed={task.completed}
+            key={task.id}
+        />
+    ));
+
     return (
         <ul className="task-list stack-large stack-exception"
             aria-labelledby="list-heading">
-            <TaskItem name="essen" completed={true} />
-            <TaskItem name="schlafen" completed={false} />
-            <TaskItem name="arbeiten" completed={false} />
+            { taskList }
         </ul>
     );
 }

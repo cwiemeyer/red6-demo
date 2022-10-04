@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import TaskList from "./components/tasks/task-list";
 
-function App() {
+/**
+ * This component functions as a wrapper of the whole App and for components of the App to be rendered within.
+ */
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>RED6 Demo</h1>
+        <h2>Task List App</h2>
       </header>
-      <TaskList />
+      <TaskList tasks={props.tasks} />
     </div>
   );
 }
