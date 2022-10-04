@@ -4,7 +4,7 @@ import TaskItem from "./task-item";
 /**
  * This component renders a container as a list for compilation of TaskItem components to be displayed.
  */
-export default function TaskList(props) {
+function TaskList(props) {
     const taskList = props.tasks.map((task) => (
         <TaskItem
             id={task.id}
@@ -21,3 +21,5 @@ export default function TaskList(props) {
         </ul>
     );
 }
+
+export default TaskList;

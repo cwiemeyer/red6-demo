@@ -11,6 +11,24 @@ const DATA = [
     { id: "todo-2", name: "Repeat", completed: false }
 ];
 
+const myHeaders = new Headers();
+
+const myRequest = new Request('DATA', {
+    method: 'GET',
+    headers: myHeaders,
+    mode: 'cors',
+    cache: 'default',
+});
+
+fetch(myRequest)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

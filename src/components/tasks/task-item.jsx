@@ -3,7 +3,7 @@ import React from "react";
 /**
  * This component renders a single task item to be displayed within the TaskList component.
  */
-export default function TaskItem(props) {
+function TaskItem(props) {
     return (
         <li className="task stack-small">
             <div className="c-cb">
@@ -23,3 +23,5 @@ export default function TaskItem(props) {
         </li>
     );
 }
+
+export default TaskItem;

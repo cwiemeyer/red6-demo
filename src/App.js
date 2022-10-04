@@ -7,11 +7,11 @@ import TaskList from "./components/tasks/task-list";
 function App(props) {
   return (
     <div className="App">
-      <header>
-        <h1>RED6 Demo</h1>
-        <h2>Task List App</h2>
-      </header>
-      <TaskList tasks={props.tasks} />
+        <header>
+            <h1>RED6 Demo</h1>
+            <h2>Task List App</h2>
+        </header>
+        <TaskList tasks={props.tasks} />
     </div>
   );
 }
