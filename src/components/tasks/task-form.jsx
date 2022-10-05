@@ -4,18 +4,22 @@ import React, {useState} from "react";
  * This component renders a form to edit the Task List.
  */
 function TaskForm(props) {
+    // Handling the name of each task with the component via state
     const [name, setName] = useState('Use hooks!');
 
+    // Handling the change event of the form
     function handleFormChange(event) {
         setName(event.target.value);
     }
 
+    // Handling the submitting event of the form
     function handleFormSubmit(event) {
         event.preventDefault();
         props.addTask(name);
         setName("");
     }
 
+    // Rendering the form component with this component template markup
     return (
         <form className="new-task-form" onSubmit={handleFormSubmit}>
             <h2 className="label-wrapper">
