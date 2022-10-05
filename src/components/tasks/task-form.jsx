@@ -5,7 +5,7 @@ import React, {useState} from "react";
  */
 function TaskForm(props) {
     // Handling the name of each task with the component via state
-    const [name, setName] = useState('Use hooks!');
+    const [name, setName] = useState('');
 
     // Handling the change event of the form
     function handleFormChange(event) {
