@@ -6,7 +6,7 @@ import TaskItem from "./task-item";
  */
 function TaskList(props) {
     // Iterating over the tasks and render a single TaskItem component for each single task
-    const taskList = props.tasks.map((task) => (
+    const taskList = props.tasks && props.tasks.map((task) => (
         <TaskItem
             id={task.id}
             name={task.name}

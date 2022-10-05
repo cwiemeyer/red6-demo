@@ -10,12 +10,12 @@ import { nanoid } from "nanoid";
 function App(props) {
     // Setting constants to cache them for usage inside the app and ensure updating correctly
     const [tasks, setTasks] = useState(props.tasks);
-    const allTasks = tasks.length;
-    const tasksNoun = tasks.length !== 1 ? 'tasks' : 'task';
-    const headingText = `${allTasks} ${tasksNoun} remaining`;
+    const allTasks = tasks && tasks.length;
+    const tasksNoun = tasks && tasks.length !== 1 ? 'tasks' : 'task';
+    const headingText = allTasks && `${allTasks} ${tasksNoun} remaining`;
 
-    const completedTasks = tasks.filter(task => task.completed === true).length;
-    const openTasks = allTasks - completedTasks;
+    const completedTasks = tasks && tasks.filter(task => task.completed === true).length;
+    const openTasks = allTasks && allTasks - completedTasks;
 
     // Adding a new task with this function. Uses nanoid plugin to generate simple unique IDs for tasks
     function addTask(name) {
@@ -25,7 +25,7 @@ function App(props) {
 
     // Functionality to toggle a task completed (boolean) and mark it as completed via clicking the checkbox form input
     function toggleTaskCompleted(id) {
-        const updatedTasks = tasks.map((task) => {
+        const updatedTasks = tasks && tasks.map((task) => {
             // if this task has the same ID as the edited task
             if (id === task.id) {
                 // use object spread to make a new object
