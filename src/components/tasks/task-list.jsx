@@ -11,6 +11,8 @@ function TaskList(props) {
             name={task.name}
             completed={task.completed}
             key={task.id}
+            toggleTaskCompleted={props.toggleTaskCompleted}
+            deleteTask={props.deleteTask}
         />
     ));
 
