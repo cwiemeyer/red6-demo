@@ -78,7 +78,7 @@ function TaskItem(props) {
     
     // Conditional rendering the component template markup here in relation to it's state: editing or viewing mode
     return (
-        <li className="task">{isEditing ? editingTemplate : viewTemplate}</li>
+        <li className="task" data-testid="task-item">{isEditing ? editingTemplate : viewTemplate}</li>
     );
 }
 

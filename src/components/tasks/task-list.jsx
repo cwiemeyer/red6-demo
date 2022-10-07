@@ -23,6 +23,7 @@ function TaskList(props) {
         <ul
             className="task-list stack-large stack-exception"
             aria-labelledby="list-heading"
+            data-testid="task-list"
         >
             { taskList }
         </ul>

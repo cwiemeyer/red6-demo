@@ -13,7 +13,6 @@ function App(props) {
     const allTasks = tasks && tasks.length;
     const tasksNoun = tasks && tasks.length !== 1 ? 'tasks' : 'task';
     const headingText = allTasks && `${allTasks} ${tasksNoun} remaining`;
-
     const completedTasks = tasks && tasks.filter(task => task.completed === true).length;
     const openTasks = allTasks && allTasks - completedTasks;
 
